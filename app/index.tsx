@@ -9,7 +9,7 @@ export default function Index() {
         alignItems: "center",
       }}
     >
-      <Text>.Enterface LLC</Text>
+      <Text style={{fontFamily: 'boog'}}>.Enterface</Text>
     </View>
   );
 }
