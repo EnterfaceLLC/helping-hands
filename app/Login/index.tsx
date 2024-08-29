@@ -28,7 +28,7 @@ const Login = () => {
     try {
       const { createdSessionId, signIn, signUp, setActive } =
         await startOAuthFlow({
-          redirectUrl: Linking.createURL("/home", { scheme: "myapp" }),
+          redirectUrl: Linking.createURL("/(tabs)/home", { scheme: "myapp" }),
         });
 
       if (createdSessionId) {
@@ -78,7 +78,7 @@ const Login = () => {
 
         <Text
           style={{
-            fontSize: 16,
+            fontSize: 14,
             textAlign: "center",
             color: "#000",
           }}

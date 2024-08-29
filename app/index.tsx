@@ -1,7 +1,11 @@
-import { Link } from "expo-router";
+import { useUser } from "@clerk/clerk-expo";
+import { Link, Redirect } from "expo-router";
 import { Text, View } from "react-native";
 
 export default function Index() {
+  const { user } = useUser();
+  console.log(user);
+
   return (
     <View
       style={{
@@ -10,9 +14,7 @@ export default function Index() {
         alignItems: "center",
       }}
     >
-      <Link href={"/Login"}>
-        <Text style={{ fontFamily: "boog" }}>.Enterface</Text>
-      </Link>
+      {user ? <Redirect href={"/(tabs)/home"} /> : <Redirect href={"/Login"} />}
     </View>
   );
 }
